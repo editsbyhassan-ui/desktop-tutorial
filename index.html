@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>COVORO — Handcrafted Luxury Leather Handbags</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    COMPLIMENTARY INSURED DELIVERY NATIONWIDE &nbsp;|&nbsp; CASH ON DELIVERY (COD) AVAILABLE &nbsp;|&nbsp; 100% FULL-GRAIN LEATHER
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-top">
+      <div class="header-left">
+        <button class="icon-btn" id="searchToggle" aria-label="Search">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="11" cy="11" r="7"></circle>
+            <line x1="20" y1="20" x2="16.2" y2="16.2"></line>
+          </svg>
+        </button>
+      </div>
+
+      <a href="#home" class="brand-logo" onclick="showView('home')">
+        <span class="brand-wordmark">COVORO</span>
+      </a>
+
+      <div class="header-right">
+        <button class="icon-btn" id="accountBtn" aria-label="Atelier Orders" title="Atelier Orders" onclick="openOrdersDashboard()">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="8" r="4"></circle>
+            <path d="M4 20c1.8-4 14.2-4 16 0"></path>
+          </svg>
+        </button>
+        <button class="icon-btn cart-trigger" id="cartToggle" aria-label="Shopping Bag">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 7h12l1 13H5L6 7z"></path>
+            <path d="M9 7V5a3 3 0 0 1 6 0v2"></path>
+          </svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="main-nav">
+      <a href="#home" onclick="showView('home')">Home</a>
+      <div class="nav-dropdown">
+        <button class="nav-drop-btn" onclick="showView('catalog', 'all')">Shop All ▾</button>
+        <div class="dropdown-menu">
+          <a href="#catalog" onclick="showView('catalog', 'all')">All Handbags (14)</a>
+          <a href="#catalog" onclick="showView('catalog', 'NYSA')">The Nysa Tote (4)</a>
+          <a href="#catalog" onclick="showView('catalog', 'VELORA')">The Velora Hobo (3)</a>
+          <a href="#catalog" onclick="showView('catalog', 'VIENNA')">The Vienna Crossbody (3)</a>
+          <a href="#catalog" onclick="showView('catalog', 'ZYRA')">The Zyra Crescent (4)</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <button class="nav-drop-btn" onclick="showView('home')">Collections ▾</button>
+        <div class="dropdown-menu">
+          <a href="#section-nysa" onclick="showView('home')">01 — The Nysa Tote</a>
+          <a href="#section-velora" onclick="showView('home')">02 — The Velora Hobo</a>
+          <a href="#section-vienna" onclick="showView('home')">03 — The Vienna Crossbody</a>
+          <a href="#section-zyra" onclick="showView('home')">04 — The Zyra Crescent</a>
+        </div>
+      </div>
+      <a href="#brand-manifesto" onclick="showView('home')">Our Heritage</a>
+      <a href="#siteFooter">Contact</a>
+    </nav>
+
+    <!-- Search Bar Drawer -->
+    <div class="search-bar-panel" id="searchPanel">
+      <input type="text" id="searchInput" placeholder="Search by model (Nysa, Velora, Vienna, Zyra) or color..." />
+      <button id="searchClose">✕</button>
+    </div>
+  </header>
+
+  <!-- HOME VIEW -->
+  <main id="homeView">
+
+    <!-- Full-Bleed Editorial Hero Banner -->
+    <section class="hero-banner" id="home">
+      <img src="images/banners/banner-vienna.jpg" alt="" class="hero-bg-blur" aria-hidden="true" />
+      <img
+        src="images/banners/banner-vienna.jpg"
+        alt="COVORO Signature Collection"
+        class="hero-img"
+      />
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-season">A/W COLLECTION</p>
+        <h1 class="hero-title">NEW ARRIVALS</h1>
+        <p class="hero-tagline">WHERE TIMELESS CRAFTSMANSHIP MEETS MODERN ELEGANCE</p>
+        <button class="btn-editorial" onclick="showView('catalog', 'all')">EXPLORE THE FOUR SILHOUETTES</button>
+      </div>
+    </section>
+
+    <!-- Brand Identity Strip -->
+    <section class="brand-crest-strip" id="brand-manifesto">
+      <div class="crest-inner">
+        <h2 class="crest-logo">COVORO</h2>
+        <p class="crest-italic-quote">A second look.</p>
+        <p class="crest-tagline">WHERE TIMELESS CRAFTSMANSHIP MEETS MODERN ELEGANCE</p>
+      </div>
+    </section>
+
+    <!-- COLLECTION 01: THE NYSA TOTE -->
+    <section class="editorial-pair" id="section-nysa">
+      <div class="campaign-banner wide-editorial">
+        <img
+          src="images/banners/banner-nysa.jpg"
+          alt="COVORO — A second look — The Nysa in Navy"
+          class="campaign-banner-full"
+        />
+      </div>
+
+      <div class="carousel-wrapper">
+        <div class="carousel-grid" id="carousel-1"></div>
+        <div class="carousel-controls">
+          <button class="ctrl-arrow" onclick="shiftCarousel(1, -1)" aria-label="Previous">&#8249;</button>
+          <span class="ctrl-indicator" id="indicator-1">1 / 1</span>
+          <button class="ctrl-arrow" onclick="shiftCarousel(1, 1)" aria-label="Next">&#8250;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLLECTION 02: THE VELORA HOBO -->
+    <section class="editorial-pair" id="section-velora">
+      <div class="campaign-banner wide-editorial">
+        <img
+          src="images/banners/banner-velora.jpg"
+          alt="COVORO Campaign — The Velora Hobo"
+          class="campaign-banner-full"
+        />
+      </div>
+
+      <div class="carousel-wrapper">
+        <div class="carousel-grid" id="carousel-2"></div>
+        <div class="carousel-controls">
+          <button class="ctrl-arrow" onclick="shiftCarousel(2, -1)" aria-label="Previous">&#8249;</button>
+          <span class="ctrl-indicator" id="indicator-2">1 / 1</span>
+          <button class="ctrl-arrow" onclick="shiftCarousel(2, 1)" aria-label="Next">&#8250;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLLECTION 03: THE VIENNA CROSSBODY -->
+    <section class="editorial-pair" id="section-vienna">
+      <div class="campaign-banner">
+        <img src="images/banners/banner-vienna.jpg" alt="" class="campaign-bg-blur" aria-hidden="true" />
+        <img
+          src="images/banners/banner-vienna.jpg"
+          alt="The Vienna Minimalist Flap Crossbody"
+          class="campaign-banner-img"
+        />
+        <div class="campaign-caption">
+          <span>SIGNATURE SERIES 03</span>
+          <h3>THE VIENNA CROSSBODY</h3>
+        </div>
+      </div>
+
+      <div class="carousel-wrapper">
+        <div class="carousel-grid" id="carousel-3"></div>
+        <div class="carousel-controls">
+          <button class="ctrl-arrow" onclick="shiftCarousel(3, -1)" aria-label="Previous">&#8249;</button>
+          <span class="ctrl-indicator" id="indicator-3">1 / 1</span>
+          <button class="ctrl-arrow" onclick="shiftCarousel(3, 1)" aria-label="Next">&#8250;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLLECTION 04: THE ZYRA CRESCENT -->
+    <section class="editorial-pair" id="section-zyra">
+      <div class="campaign-banner">
+        <img src="images/banners/banner-zyra.jpg" alt="" class="campaign-bg-blur" aria-hidden="true" />
+        <img
+          src="images/banners/banner-zyra.jpg"
+          alt="The Zyra Curved Crescent Baguette"
+          class="campaign-banner-img"
+        />
+        <div class="campaign-caption">
+          <span>SIGNATURE SERIES 04</span>
+          <h3>THE ZYRA CRESCENT</h3>
+        </div>
+      </div>
+
+      <div class="carousel-wrapper">
+        <div class="carousel-grid" id="carousel-4"></div>
+        <div class="carousel-controls">
+          <button class="ctrl-arrow" onclick="shiftCarousel(4, -1)" aria-label="Previous">&#8249;</button>
+          <span class="ctrl-indicator" id="indicator-4">1 / 1</span>
+          <button class="ctrl-arrow" onclick="shiftCarousel(4, 1)" aria-label="Next">&#8250;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Two-Column Category Visual Split -->
+    <section class="category-split">
+      <div class="split-card" onclick="showView('catalog', 'NYSA')">
+        <img
+          src="images/products/nysa-navy-front.jpeg"
+          alt="The Nysa Tote Collection"
+        />
+        <div class="split-label">THE NYSA TOTE &rarr;</div>
+      </div>
+      <div class="split-card" onclick="showView('catalog', 'ZYRA')">
+        <img
+          src="images/products/zyra-olive-front.jpeg"
+          alt="The Zyra Crescent Collection"
+        />
+        <div class="split-label">THE ZYRA CRESCENT &rarr;</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FULL CATALOG VIEW -->
+  <section id="catalogView" class="catalog-view hidden">
+    <div class="catalog-header">
+      <button class="back-link" onclick="showView('home')">&larr; Back to Editorial Home</button>
+      <h2 id="catalogTitle">THE ATELIER CATALOG</h2>
+      <p>Handcrafted structured silhouettes in full-grain leather &amp; timeless neutral palettes.</p>
+    </div>
+
+    <div class="filter-bar">
+      <div class="filter-tabs">
+        <button class="filter-pill active" data-filter="all" onclick="filterCatalog('all', this)">All Bags (14)</button>
+        <button class="filter-pill" data-filter="NYSA" onclick="filterCatalog('NYSA', this)">Nysa Tote</button>
+        <button class="filter-pill" data-filter="VELORA" onclick="filterCatalog('VELORA', this)">Velora Hobo</button>
+        <button class="filter-pill" data-filter="VIENNA" onclick="filterCatalog('VIENNA', this)">Vienna Crossbody</button>
+        <button class="filter-pill" data-filter="ZYRA" onclick="filterCatalog('ZYRA', this)">Zyra Crescent</button>
+      </div>
+      <div class="sort-box">
+        <label for="sortSelect">Sort by:</label>
+        <select id="sortSelect" onchange="renderCatalog()">
+          <option value="featured">Featured</option>
+          <option value="price-asc">Price, low to high</option>
+          <option value="price-desc">Price, high to low</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="catalog-grid" id="catalogGrid"></div>
+  </section>
+
+  <!-- NEWSLETTER & MINIMAL FOOTER -->
+  <footer class="site-footer" id="siteFooter">
+    <div class="newsletter-box">
+      <h3>SIGNUP TO OUR NEWSLETTER</h3>
+      <p>Receive private previews of seasonal drops, trunk shows, and atelier editions.</p>
+      <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+        <input type="email" id="newsletterEmail" placeholder="Enter your email" required />
+        <button type="submit" aria-label="Subscribe">&rarr;</button>
+      </form>
+    </div>
+
+    <div class="footer-columns">
+      <div class="footer-col">
+        <h4>COLLECTIONS</h4>
+        <ul>
+          <li><a href="#section-nysa" onclick="showView('home')">The Nysa Tote</a></li>
+          <li><a href="#section-velora" onclick="showView('home')">The Velora Hobo</a></li>
+          <li><a href="#section-vienna" onclick="showView('home')">The Vienna Crossbody</a></li>
+          <li><a href="#section-zyra" onclick="showView('home')">The Zyra Crescent</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>CLIENT SERVICE</h4>
+        <ul>
+          <li><a href="javascript:void(0)" onclick="openToast('Complimentary insured delivery nationwide across Pakistan.')">Shipping &amp; Delivery</a></li>
+          <li><a href="javascript:void(0)" onclick="openToast('Care Guide: Wipe clean with dry soft cloth; condition with neutral leather cream.')">Leather Care</a></li>
+          <li><a href="https://wa.me/923376029553" target="_blank" rel="noopener">Order Assistance (WhatsApp)</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col" id="contactSection">
+        <h4>CONTACT US</h4>
+        <ul>
+          <li><a href="mailto:covoro.online@gmail.com">covoro.online@gmail.com</a></li>
+          <li><a href="https://wa.me/923376029553" target="_blank" rel="noopener">WhatsApp: +92 337 6029553</a></li>
+          <li><a href="https://www.instagram.com/covoro.pk/" target="_blank" rel="noopener">Instagram: @covoro.pk</a></li>
+          <li><a href="https://www.facebook.com/share/1GL1qN4XEW/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook: @covoro.pk</a></li>
+          <li>Lahore, Pakistan</li>
+        </ul>
+        <div class="footer-social-row">
+          <a href="https://www.instagram.com/covoro.pk/" target="_blank" rel="noopener" class="footer-social-link" title="Follow COVORO on Instagram" aria-label="Instagram">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/share/1GL1qN4XEW/?mibextid=wwXIfr" target="_blank" rel="noopener" class="footer-social-link" title="Follow COVORO on Facebook" aria-label="Facebook">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <a href="https://wa.me/923376029553" target="_blank" rel="noopener" class="footer-social-link" title="Chat on WhatsApp" aria-label="WhatsApp">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.82 14.01c-.24.68-1.41 1.3-1.95 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .89 2.15.07.14.12.31.02.5-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.14-.3.3-.13.59.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.29.14.48.22.55.34.07.12.07.69-.17 1.37z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 COVORO. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Widget -->
+  <a
+    href="https://wa.me/923376029553?text=Hello%20COVORO%20Atelier%2C%20I%20would%20like%20to%20inquire%20about%20your%20collection."
+    target="_blank"
+    rel="noopener"
+    class="whatsapp-float"
+  >
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.82 14.01c-.24.68-1.41 1.3-1.95 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .89 2.15.07.14.12.31.02.5-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.14-.3.3-.13.59.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.29.14.46.12.63-.07.17-.19.73-.85.92-1.14.19-.29.39-.24.66-.14.27.1 1.7.8 1.99.95.29.14.48.22.55.34.07.12.07.69-.17 1.37z"/>
+    </svg>
+    <span>WhatsApp Orders</span>
+  </a>
+
+  <!-- PRODUCT QUICK VIEW MODAL (4 Studio Angles + Dynamic Color Swatches) -->
+  <div class="modal-backdrop hidden" id="productModal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeProductModal()">✕</button>
+      <div class="modal-body">
+        <div class="modal-gallery">
+          <img id="modalMainImg" src="" alt="Product Preview" />
+          <div class="modal-thumbs">
+            <button class="thumb-btn active" data-angle="front" onclick="switchModalAngle('front')">Front</button>
+            <button class="thumb-btn" data-angle="angle" onclick="switchModalAngle('angle')">3/4 Angle</button>
+            <button class="thumb-btn" data-angle="side" onclick="switchModalAngle('side')">Profile</button>
+            <button class="thumb-btn" data-angle="back" onclick="switchModalAngle('back')">Back</button>
+          </div>
+        </div>
+        <div class="modal-details">
+          <p class="modal-category" id="modalCategory"></p>
+          <h3 id="modalTitle"></h3>
+          <p class="modal-price" id="modalPrice"></p>
+          <p class="modal-desc" id="modalDesc"></p>
+
+          <div class="modal-swatches">
+            <span>Colorway: <strong id="modalColorName"></strong></span>
+            <div class="swatch-row" id="modalSwatchesRow"></div>
+          </div>
+
+          <div class="modal-actions">
+            <button class="btn-primary-dark" id="modalAddBtn">ADD TO BAG</button>
+            <button class="btn-cod-quick" id="modalBuyCodBtn" onclick="buyNowCOD()">BUY NOW — CASH ON DELIVERY (COD)</button>
+            <a id="modalWhatsappBtn" href="#" target="_blank" rel="noopener" class="btn-outline-espresso">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 6px;">
+                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.82 14.01c-.24.68-1.41 1.3-1.95 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .89 2.15.07.14.12.31.02.5-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.14-.3.3-.13.59.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.29.14.46.12.63-.07.17-.19.73-.85.92-1.14.19-.29.39-.24.66-.14.27.1 1.7.8 1.99.95.29.14.48.22.55.34.07.12.07.69-.17 1.37z"/>
+              </svg>ORDER VIA WHATSAPP
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE-OUT SHOPPING BAG DRAWER -->
+  <div class="drawer-backdrop hidden" id="cartDrawer">
+    <div class="drawer-panel">
+      <div class="drawer-header">
+        <h3>YOUR SHOPPING BAG</h3>
+        <button onclick="closeCart()">✕</button>
+      </div>
+      <div class="drawer-items" id="cartItemsContainer"></div>
+      <div class="drawer-footer">
+        <div class="subtotal-row">
+          <span>SUBTOTAL</span>
+          <strong id="cartSubtotal">PKR 0</strong>
+        </div>
+        <p class="shipping-note">Complimentary insured delivery &bull; Cash on Delivery available.</p>
+        <div class="drawer-actions-stack">
+          <button class="btn-primary-dark full-width" onclick="openCodModal()">
+            CASH ON DELIVERY (COD) ORDER
+          </button>
+          <button class="btn-whatsapp full-width" onclick="checkoutViaWhatsApp()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.82 14.01c-.24.68-1.41 1.3-1.95 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .89 2.15.07.14.12.31.02.5-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.14-.3.3-.13.59.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.29.14.46.12.63-.07.17-.19.73-.85.92-1.14.19-.29.39-.24.66-.14.27.1 1.7.8 1.99.95.29.14.48.22.55.34.07.12.07.69-.17 1.37z"/>
+            </svg>
+            ORDER VIA WHATSAPP
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASH ON DELIVERY (COD) CHECKOUT MODAL -->
+  <div class="modal-backdrop hidden" id="codModal">
+    <div class="modal-card cod-modal-card">
+      <button class="modal-close" onclick="closeCodModal()" aria-label="Close">✕</button>
+
+      <!-- Step 1: Checkout Form -->
+      <div id="codFormView">
+        <div class="cod-header">
+          <span class="cod-badge">CASH ON DELIVERY</span>
+          <h3>CONFIRM YOUR DELIVERY DETAILS</h3>
+          <p>Pay cash when your order arrives. Free insured delivery across Pakistan.</p>
+        </div>
+
+        <div class="cod-grid">
+          <!-- Order Summary Mini Card -->
+          <div class="cod-order-summary">
+            <h4>ORDER SUMMARY</h4>
+            <div class="cod-items-list" id="codItemsSummary"></div>
+            <div class="cod-price-breakdown">
+              <div class="price-line">
+                <span>Subtotal</span>
+                <strong id="codSummarySubtotal">PKR 0</strong>
+              </div>
+              <div class="price-line">
+                <span>Insured Delivery</span>
+                <span class="free-tag">FREE</span>
+              </div>
+              <div class="price-line total-line">
+                <span>Total Payable on Delivery</span>
+                <strong id="codSummaryTotal">PKR 0</strong>
+              </div>
+            </div>
+            <div class="cod-guarantee">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              <span>100% Full-grain Leather &bull; Open parcel verification allowed</span>
+            </div>
+          </div>
+
+          <!-- Checkout Form -->
+          <form class="cod-form" id="codCheckoutForm" onsubmit="handleCodOrderSubmit(event)">
+            <div class="form-group">
+              <label for="codFullName">Full Name *</label>
+              <input type="text" id="codFullName" placeholder="e.g. Ayesha Khan" required />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group flex-1">
+                <label for="codPhone">Mobile / WhatsApp Number *</label>
+                <input type="tel" id="codPhone" placeholder="03xx xxxxxxx" required />
+                <span class="field-hint">Courier will call this number prior to delivery.</span>
+              </div>
+              <div class="form-group flex-1">
+                <label for="codEmail">Email Address (Optional)</label>
+                <input type="email" id="codEmail" placeholder="for order receipts" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="codAddress">Complete Delivery Address *</label>
+              <textarea id="codAddress" rows="2" placeholder="House / Flat #, Street, Block, Sector / Area" required></textarea>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group flex-1">
+                <label for="codCity">City *</label>
+                <select id="codCity" required>
+                  <option value="" disabled selected>Select your city...</option>
+                  <option value="Lahore">Lahore</option>
+                  <option value="Karachi">Karachi</option>
+                  <option value="Islamabad">Islamabad</option>
+                  <option value="Rawalpindi">Rawalpindi</option>
+                  <option value="Faisalabad">Faisalabad</option>
+                  <option value="Multan">Multan</option>
+                  <option value="Peshawar">Peshawar</option>
+                  <option value="Sialkot">Sialkot</option>
+                  <option value="Gujranwala">Gujranwala</option>
+                  <option value="Quetta">Quetta</option>
+                  <option value="Hyderabad">Hyderabad</option>
+                  <option value="Abbottabad">Abbottabad</option>
+                  <option value="Bahawalpur">Bahawalpur</option>
+                  <option value="Sargodha">Sargodha</option>
+                  <option value="Gujrat">Gujrat</option>
+                  <option value="Other">Other City (Specify in address)</option>
+                </select>
+              </div>
+              <div class="form-group flex-1">
+                <label for="codNotes">Delivery Note (Optional)</label>
+                <input type="text" id="codNotes" placeholder="e.g. Call before arrival" />
+              </div>
+            </div>
+
+            <div class="payment-method-box">
+              <div class="payment-radio">
+                <span class="radio-dot"></span>
+                <div>
+                  <strong>Cash on Delivery (COD)</strong>
+                  <p>Pay cash in PKR when courier delivers your parcel.</p>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-primary-dark full-width cod-submit-btn" id="codSubmitBtn">
+              CONFIRM &amp; PLACE COD ORDER
+            </button>
+
+          </form>
+        </div>
+      </div>
+
+      <!-- Step 2: Order Placed Success Screen -->
+      <div id="codSuccessView" class="hidden">
+        <div class="success-card">
+          <div class="success-icon">✓</div>
+          <span class="success-badge">ORDER CONFIRMED</span>
+          <h3 id="successTitle">THANK YOU FOR YOUR ORDER!</h3>
+          <p class="success-lead">Your Cash on Delivery order has been successfully placed. No online payment is needed — you will pay cash upon delivery.</p>
+
+          <div class="success-order-box">
+            <div class="order-detail-row">
+              <span>Order Reference:</span>
+              <strong id="successOrderId">#COV-00000</strong>
+            </div>
+            <div class="order-detail-row">
+              <span>Payment Method:</span>
+              <strong>Cash on Delivery (Pay upon delivery)</strong>
+            </div>
+            <div class="order-detail-row">
+              <span>Total Payable to Courier:</span>
+              <strong id="successTotal">PKR 0</strong>
+            </div>
+            <div class="order-detail-row">
+              <span>Delivery Timeframe:</span>
+              <span>2 to 4 Business Days</span>
+            </div>
+            <div class="order-detail-row">
+              <span>Recipient:</span>
+              <span id="successRecipient"></span>
+            </div>
+            <div class="order-detail-row">
+              <span>Destination:</span>
+              <span id="successAddress"></span>
+            </div>
+          </div>
+
+          <p class="cod-success-note">
+            Our atelier concierge will call your contact number to verify delivery details before parcel dispatch.
+          </p>
+
+          <div class="success-actions">
+            <button class="btn-primary-dark full-width" onclick="closeCodModal()">
+              CONTINUE SHOPPING
+            </button>
+            <button class="btn-outline-espresso full-width" onclick="window.print()">
+              PRINT / SAVE RECEIPT
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ATELIER ORDERS DASHBOARD (For Store Owner) -->
+  <div class="modal-backdrop hidden" id="ordersDashboardModal">
+    <div class="modal-card orders-dashboard-card">
+      <button class="modal-close" onclick="closeOrdersDashboard()" aria-label="Close">✕</button>
+      <div class="dashboard-header">
+        <span class="cod-badge">ATELIER DASHBOARD</span>
+        <h3>CASH ON DELIVERY ORDERS</h3>
+        <p>Log of all customer COD orders placed through the website.</p>
+      </div>
+      <div class="dashboard-body" id="ordersDashboardList"></div>
+      <div class="dashboard-footer">
+        <button class="btn-outline-espresso" onclick="exportOrdersCSV()">Export to CSV (Excel)</button>
+        <button class="btn-primary-dark" onclick="closeOrdersDashboard()">Close</button>
+      </div>
+    </div>
+  </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast hidden" id="toastBox"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
